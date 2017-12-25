@@ -1,5 +1,5 @@
 /**
- * Created by John on 6/17/16.
+ * Created by John on 12/25/17.
  */
 
 lineChart = function(_parentElement, _data){

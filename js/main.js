@@ -2,7 +2,7 @@ var fixtureData;
 
 $.ajax({
     headers: { 'X-Auth-Token': 'c53d14d63a5b4a91af3d15d83197f6c8' },
-    url: 'https://api.football-data.org/v1/competitions/426/fixtures',
+    url: 'https://api.football-data.org/v1/competitions/445/fixtures',
     dataType: 'json',
     type: 'GET',
 }).done(function(response) {
@@ -30,6 +30,9 @@ function changeName (str){
         }
         else if(str == "Manchester United FC"){
             return "Man United";
+        }
+        else if(str == "West Bromwich Albion FC"){
+            return "West Brom";
         }
         else{
             for(var i = 0; i < nameArray.length; i++){
