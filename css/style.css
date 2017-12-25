@@ -1,0 +1,127 @@
+@font-face{
+    font-family: "SharpSans";
+    src: url("SharpSans-Font-master/ss-600.otf");
+}
+
+label{
+    color: white;
+    font-size: 15px;
+    font-family: "SharpSans";
+}
+
+h3{
+    font-family: "SharpSans";
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: #000;
+    stroke-width: 2;
+}
+
+.x.axis path {
+    display: none;
+}
+
+path.line {
+    fill: none;
+    stroke: steelblue;
+    stroke-width: 1.5px;
+}
+
+path.firstline {
+    fill: none;
+
+}
+
+path.secondline {
+    fill: none;
+}
+
+path{
+    stroke: white;
+}
+
+.info{
+    font-size: 20px;
+}
+
+circle{
+    cursor: pointer;
+}
+
+.d3-tip {
+    line-height: 1;
+    font-weight: bold;
+    padding: 12px;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    border-radius: 2px;
+}
+
+/* Creates a small triangle extender for the tooltip */
+.d3-tip:after {
+    box-sizing: border-box;
+    display: inline;
+    font-size: 10px;
+    width: 100%;
+    line-height: 1;
+    color: rgba(0, 0, 0, 0.8);
+    content: "\25BC";
+    position: absolute;
+    text-align: center;
+}
+
+/* Style northward tooltips differently */
+.d3-tip.n:after {
+    margin: -1px 0 0 0;
+    top: 100%;
+    left: 0;
+}
+
+.tooltip {
+    color: #222;
+    background: #fff;
+    padding: .5em;
+    text-shadow: #f5f5f5 0 1px 0;
+    border-radius: 2px;
+    box-shadow: 0px 0px 2px 0px #a6a6a6;
+    opacity: 0.9;
+    position: absolute;
+}
+
+.hidden{
+    font-weight: bold;
+}
+
+.navbar{
+    padding: 20px 0 20px 0;
+    background: #38003c;
+}
+
+.about-modal{
+    font-weight: 900;
+    color: blue;
+}
+
+.start{
+    color:blue;
+}
+
+#titleText{
+    font-size:50px;
+    font-family:"SharpSans";
+    font-weight: bold;
+    padding-left: 30px;
+    color: white;
+}
+
+#dropdown{
+    margin-right: 30px;
+    margin-top:8px;
+}
+
+#xlabel{
+    font-family: "SharpSans";
+}

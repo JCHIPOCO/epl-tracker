@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>EPL-Record</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/jquery.css">
+    <link rel="stylesheet" href="css/ext-jquery-ui.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <p class="navbar-text" id="titleText">The Premier League Record</p>
+            </div>
+            <div class = "col-xs-4 navbar-right" id="dropdown">
+                <div class="form-group">
+                    <label for="attribute">Metric:</label>
+                    <select class="form-control" id="attribute"  onchange="updateVars()">
+                        <option value = "totalPoints">Points</option>
+                        <option value = "totalGoalsFor">Goals Scored</option>
+                        <option value = "totalGoalsAllowed">Goals Allowed</option>
+                        <option value = "totalGoalsDifferential">Goal Differential</option>
+                        <option value = "winningOdds">Decimal Odds for Win</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class = "row">
+            <div class = "col-xs-8">
+                <h3 align="center">Premier League 2016-17: The Season So Far</h3>
+                <div id="chartz"></div>         
+            </div>
+            <div class="col-xs-4">
+                <div id="fixtureInfo">
+                    <svg width="400" height="400">
+                        <g transform="translate(-10,50)" id="gInfo">
+                            <!--Fixture Result Block-->
+                            <text class="info" x="201" y="35" id="infodate" style="text-anchor: middle;"></text>
+                            <text class="info" x="207" y="55" id="infomatchday" style="text-anchor: middle;"></text>
+                            <image class="info" x="20" y="100" width="140" height="140" id="image1"></image>
+                            <image class="info" x="250" y="100" width="140" height="140" id="image2"></image>
+                            <text class="info" x="88" y="95" id="hometeam" style="text-anchor: middle;"></text>
+                            <text class="info" x="316" y="95" id="awayteam" style="text-anchor: middle;"></text>
+                            <text class="info" x="167" y="170" id="score"></text>
+                        
+                            <!--Betting Block-->
+                            <text class="info" x="202" y="295" id="infoodds" style="text-anchor: middle;"></text>
+                            <text class="info" x="093" y="325" id="homeOddsLabel" style="text-anchor: middle;"></text>
+                            <text class="info" x="093" y="345" id="homeOdds" style="text-anchor: middle;"></text>
+                            <text class="info" x="320" y="325" id="awayOddsLabel" style="text-anchor: middle;"></text>
+                            <text class="info" x="320" y="345" id="awayOdds" style="text-anchor: middle;"></text>
+                            <text class="info" x="207" y="325" id="drawOddsLabel" style="text-anchor: middle;"></text>
+                            <text class="info" x="207" y="345" id="drawOdds" style="text-anchor: middle;"></text>
+                        </g>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="myModal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">x</span>
+                    </button>
+                    <h4 class="modal-title">
+                        <span id="welcome">Welcome to The Premier League Record!</span>
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    <h5 class="start">
+                        <span class="about-modal">About the Premier League Record</span>
+                    </h5>
+                    <p>Known as one of the best football leagues in the world, the Premier League produces some of the most dramatic and spectacular stories in sport. This season tracker is meant to visualize those stories as the current season unfolds. Using data from <a href="http://api.football-data.org/index">football-data.org</a>, this tracker plots cumulative totals of different properties found in the fixture data set against the current span of completed matchdays. As we watch the big games on the latest matchday, the Premier League Record helps us keep tabs on the current evolution of the season. With this tool, you can track how well your team is doing, check out dips in form, and even see how the bookies rate your team's chances of winning.</p>
+                    <p></p>
+                    <h5 class="start">
+                        <span class="about-modal">Using this Visualization</span>
+                    </h5>
+                    <p>The graph displays a metric against matchdays. Change metrics using the dropdown filter on the upper right.</p>
+                    <p>Using your mouse, hover around various team plots in the graph. Click on the one of interest. Click on any matchday points that appear to view fixture data on the day of the game. To return to plotting all teams, click on the team lineplot again.</p>
+                    <p>To track one team's statistics, click on the team's lineplot, and change through each metric on the dropdown.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Ready to Explore</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/d3.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/lineChart2.js"></script>
+    <script src="js/nameArray.js"></script>
+    <script src="js/teamcolors.js"></script>
+    <script>
+        $(window).load(function(){
+            $("#myModal").modal('show');
+        });
+    </script>
+</body>
+</html>
